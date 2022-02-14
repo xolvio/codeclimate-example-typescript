@@ -25,13 +25,14 @@
         "compile": "tsc",
         "lint": "eslint . && prettier --check .",
         "lint:action": "node-actionlint",
+        "lint:eslint": "eslint .",
+        "lint:prettier": "prettier . --check",
+        "lint:typecheck": "npm run compile -- --noEmit",
         "fix": "run-s fix:*",
         "fix:eslint": "eslint --fix .",
         "fix:prettier": "prettier --write .",
         "test": "npm run clean:test && jest",
-        "test:watch": "npm run test -- --watch",
-        "type-check": "npm run compile -- --noEmit",
-        "type-check:watch": "npm run type-check -- --watch"
+        "watch": "npm run test -- --watch"
     },
     "devDependencies": {
         "@types/jest": "^27.4.0",
