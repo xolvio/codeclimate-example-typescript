@@ -1,0 +1,37 @@
+{
+    "version": 2,
+    "checks": {
+        "method-complexity": {
+            "enabled": true,
+            "config": {
+                "threshold": 4
+            }
+        },
+        "method-lines": {
+            "enabled": true,
+            "config": {
+                "threshold": 23
+            }
+        },
+        "similar-code": {
+            "enabled": true,
+            "config": {
+                "threshold": 75
+            }
+        },
+        "identical-code": {
+            "enabled": true,
+            "config": {
+                "threshold": 75
+            }
+        }
+    },
+    "plugins": {
+        "eslint": {
+            "enabled": false
+        },
+        "nodesecurity": {
+            "enabled": true
+        }
+    }
+}
