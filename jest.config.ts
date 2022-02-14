@@ -1,7 +1,7 @@
 import type { Config } from '@jest/types';
 
 const coverage: Config.InitialOptions = {
-    collectCoverage: true
+    collectCoverage: true,
     coverageDirectory: '<rootDir>/coverage',
     coveragePathIgnorePatterns: ['<rootDir>/dist', '<rootDir>/node_modules'],
     coverageReporters: ['lcov', 'text'],
