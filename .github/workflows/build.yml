@@ -42,10 +42,13 @@ jobs:
         run: npm install --no-fund
 
       - name: Typecheck the code
-        run: npm run type-check
+        run: npm run lint:typecheck
 
       - name: Lint the code
-        run: npm run lint
+        run: npm run lint:eslint
+
+      - name: Prettify the code
+        run: npm run lint:prettier
 
       - name: Lint workflow files
         run: npm run lint:action
