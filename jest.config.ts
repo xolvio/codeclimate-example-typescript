@@ -7,11 +7,15 @@ const coverage: Config.InitialOptions = {
     coverageReporters: ['lcov', 'text'],
 };
 
+const preset: Config.InitialOptions = {
+    injectGlobals: false,
+    preset: 'ts-jest',
+}
+
 const config: Config.InitialOptions = {
     ...coverage,
     errorOnDeprecated: true,
-    injectGlobals: false,
-    preset: 'ts-jest',
+    ...preset,
     roots: ['<rootDir>/src'],
     testEnvironment: 'node',
     testPathIgnorePatterns: ['<rootDir>/dist', '<rootDir>/node_modules'],
