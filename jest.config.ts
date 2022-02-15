@@ -10,7 +10,7 @@ const coverage: Config.InitialOptions = {
 const preset: Config.InitialOptions = {
     injectGlobals: false,
     preset: 'ts-jest',
-}
+};
 
 const config: Config.InitialOptions = {
     ...coverage,
