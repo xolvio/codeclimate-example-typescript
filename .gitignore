@@ -1,10 +1,10 @@
-dist
+dist/
 
 # Dependency directories
-node_modules
+node_modules/
 
 # Coverage directory (lcov)
-coverage
+coverage/
 
 # Optional npm cache directory
-.npm
+.npm/
