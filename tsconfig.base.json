@@ -1,0 +1,14 @@
+{
+    "extends": "@tsconfig/node16-strictest/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "noEmitOnError": true
+    },
+    "exclude": ["node_modules/", "./dist", "./coverage", "*.config.ts"]
+}

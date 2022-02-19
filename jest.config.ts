@@ -1,24 +1,38 @@
 import type { Config } from '@jest/types';
+import type { InitialOptionsTsJest } from 'ts-jest';
+
+const pathIgnorePatterns: string[] = [
+    '<rootDir>/dist/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/coverage/',
+];
 
 const coverage: Config.InitialOptions = {
-    collectCoverage: true,
+    collectCoverage: false, // enable via --coverage instead
     coverageDirectory: '<rootDir>/coverage',
-    coveragePathIgnorePatterns: ['<rootDir>/dist', '<rootDir>/node_modules'],
+    coveragePathIgnorePatterns: pathIgnorePatterns,
     coverageReporters: ['lcov', 'text'],
 };
 
-const preset: Config.InitialOptions = {
-    injectGlobals: false,
-    preset: 'ts-jest',
+// https://github.com/kulshekhar/ts-jest/issues/748#issuecomment-885399102
+const typescript: InitialOptionsTsJest = {
+    globals: {
+        'ts-jest': {
+            compiler: 'typescript',
+            tsconfig: '<rootDir>/tsconfig.base.json',
+        },
+    },
 };
 
 const config: Config.InitialOptions = {
     ...coverage,
     errorOnDeprecated: true,
-    ...preset,
-    roots: ['<rootDir>/src'],
+    injectGlobals: false,
+    preset: 'ts-jest',
+    roots: ['<rootDir>/src/'],
     testEnvironment: 'node',
-    testPathIgnorePatterns: ['<rootDir>/dist', '<rootDir>/node_modules'],
+    testPathIgnorePatterns: pathIgnorePatterns,
+    ...typescript,
 };
 
 export default config;
